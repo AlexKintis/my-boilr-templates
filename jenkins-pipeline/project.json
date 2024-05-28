@@ -1,0 +1,4 @@
+{
+    "PipelineFileName": "Jenkinsfile",
+    "AGENT": "any"
+}
