@@ -30,7 +30,7 @@ This repository contains a collection of templates designed for various projects
 
 ### Docker
 
-- **Docker Compose**: Template for defining and running multi-container Docker applications using Docker Compose.
+- **Docker Compose (DOES not work)**: Template for defining and running multi-container Docker applications using Docker Compose.
 <!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->
 <!--- **Docker Swarm**: Template for setting up a Docker Swarm cluster.-->
 
