@@ -1,0 +1,15 @@
+services:
+{{ range .Services }}
+  {{ .Name }}:
+    image: {{ .Image }}
+    ports:
+    {{ range .Ports }}
+      - "{{ . }}"
+    {{ end }}
+    {{ if .EnvironmentVariables }}
+    environment:
+    {{ range .EnvironmentVariables }}
+      - {{ . }}
+    {{ end }}
+    {{ end }}
+{{ end }}

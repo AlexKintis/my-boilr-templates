@@ -1,0 +1,21 @@
+{
+    "Serices": [
+        {
+            "Name": "web",
+            "Image": "nginx:latest",
+            "Ports": [
+                "80:80"
+            ]
+        },
+        {
+            "Name": "db",
+            "Image": "mysql:latest",
+            "Ports": [
+                "3306:3306"
+            ],
+            "EnvironmentVariables": [
+                "MYSQL_ROOT_PASSWORD=123456"
+            ]
+        }
+    ] 
+}
