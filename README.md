@@ -1,8 +1,8 @@
-# Boilr Templates Repository
+<h1 align=center>My boilr templates</h1>
 
 This repository contains a collection of templates designed for various projects, including Jenkins, Docker<!--, Kubernetes, and more -->. These templates are created to be used with [Boilr](https://github.com/tmrts/boilr), a project scaffolding tool that helps you rapidly create project structures.
 
-## Table of Contents
+# Table of Contents
 
 <!-- - [Introduction](#introduction) -->
 - [Templates](#templates)
@@ -12,23 +12,23 @@ This repository contains a collection of templates designed for various projects
   <!--- [Kubernetes](#kubernetes)-->
   <!--- [Terraform](#terraform)-->
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+<!--- [Contributing](#contributing)-->
+<!--- [License](#license)-->
+<!--- [Contact](#contact)-->
 
 <!--## Introduction-->
 
 <!--This repository is a comprehensive resource for high-quality templates tailored for various project needs. Each template is crafted to ensure easy customization and integration into your workflow, helping you save time and avoid common setup pitfalls. These templates are designed to be used with Boilr, making project setup faster and more efficient.-->
 
-## Templates
+# Templates
 
-### Jenkins
+## Jenkins
 
 - **Jenkins Pipeline Template**: A ready-to-use Jenkins pipeline template for CI/CD processes.
 <!--- **Multibranch Pipeline**: Template for setting up multibranch pipelines in Jenkins.-->
 <!--- **Jenkins Configuration as Code (JCasC)**: Template for managing Jenkins configuration using YAML files.-->
 
-### Docker
+## Docker
 
 - **Docker Compose (DOES not work)**: Template for defining and running multi-container Docker applications using Docker Compose.
 - **Docker Image Wrapper Script Template**: Script template which is for building and wrapping a docker image and executing it as an "host level" command.
@@ -66,7 +66,7 @@ This repository contains a collection of templates designed for various projects
 <!--- **Azure Infrastructure**: Template for provisioning Azure resources using Terraform.-->
 <!--- **GCP Infrastructure**: Template for managing Google Cloud Platform resources with Terraform.-->
 
-## Usage
+# Usage
 
 To use any of the templates in this repository with Boilr:
 
