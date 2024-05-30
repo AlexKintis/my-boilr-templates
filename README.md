@@ -45,6 +45,20 @@ This repository contains a collection of templates designed for various projects
     my-command-wrapper.sh <ARGS>
     ```
 
+    > NOTE: The `Dockerfile` should have the following structure in order to work properly:
+
+    ```Dockerfile
+    FROM image:tag
+
+    # Do what you have to do to build the image
+    # Maybe export to the path the desired command
+    # For example:
+    export PATH=$PATH:/the/path/to/my-command
+
+    # And then add as an entrypoint the command that will be executed
+    ENTRYPOINT [ "my-command" ]
+    ```
+
 <!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->
 <!--- **Docker Swarm**: Template for setting up a Docker Swarm cluster.-->
 
