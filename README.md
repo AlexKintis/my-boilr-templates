@@ -55,6 +55,11 @@ This repository contains a collection of templates designed for various projects
     # For example:
     export PATH=$PATH:/the/path/to/my-command
 
+    # Create a directory to mount the host's directory
+    mkdir -p /pwd
+    # Set the working directory to the mounted directory
+    WORKDIR /pwd
+
     # And then add as an entrypoint the command that will be executed
     ENTRYPOINT [ "my-command" ]
     ```
