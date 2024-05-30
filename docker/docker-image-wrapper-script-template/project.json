@@ -1,0 +1,5 @@
+{
+    "CommandName": "script",
+    "DockerfileName": "Dockerfile",
+    "BaseRunCommand": "docker run --network=\\\"host\\\" --rm -v $(pwd):/pwd"
+}
