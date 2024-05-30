@@ -31,7 +31,7 @@ This repository contains a collection of templates designed for various projects
 ### Docker
 
 - **Docker Compose (DOES not work)**: Template for defining and running multi-container Docker applications using Docker Compose.
-- **Docker Image Wrapper Script Template**: Script template which is for building and wrapping a docker image so that it can be used as a command line tool.
+- **Docker Image Wrapper Script Template**: Script template which is for building and wrapping a docker image and executing it as an "host level" command.
 
     For example, This is the command that will be executed inside the container:
 
