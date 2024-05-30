@@ -16,9 +16,9 @@ process_directory() {
 
             if [ -d "$d/template" ] || [ -f "$d/project.json" ]; then
 
-                echo "Adding template $d"
-
+                echo "Adding template: $d"
                 template_name=$(basename "$d")
+                echo "With template name: $d"
 
                 # Save the template to boilr
                 boilr template save -f "$d" "$template_name"
