@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "standard"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-empty-function": "off",
+        "no-undef": "off",
+        "no-unused-expressions": "off",
+        "semi": ["error", "always"],
+        "indent": ["error", 4],
+        "quotes": ["error", "double"],
+        "@typescript-eslint/no-unused-vars": "warn",
+        "eqeqeq": "warn",
+        "padded-blocks": "off",
+        "accessor-pairs": "warn",
+        "space-before-function-paren": "off",
+        "@typescript-eslint/space-before-function-paren": ["error", "always"],
+        "@typescript-eslint/type-annotation-spacing": ["error", {
+            "before": false,
+            "after": true,
+            "overrides": {
+                    "colon": {
+                        "before": false,
+                        "after": true
+                    }
+            }
+        }]
+    }
+}

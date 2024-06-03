@@ -8,6 +8,7 @@ This repository contains a collection of templates designed for various projects
 - [Templates](#templates)
   - [Jenkins](#jenkins)
   - [Docker](#docker)
+  - [Javascript](#javascript)
   <!--- [Ansible](#ansible)-->
   <!--- [Kubernetes](#kubernetes)-->
   <!--- [Terraform](#terraform)-->
@@ -62,6 +63,36 @@ This repository contains a collection of templates designed for various projects
 
     # And then add as an entrypoint the command that will be executed
     ENTRYPOINT [ "my-command" ]
+    ```
+
+## Javascript
+
+- **Typescript NodeJS Template**: A template for setting up a Node.js project with TypeScript.
+
+    This template will have the following structure:
+
+    ```plaintext
+    .
+    ├── .eslintrc.json  <-- ESLint configuration file
+    ├── .gitignore      <-- Git ignore file
+    ├── package.json    <-- Node.js package file
+    ├── src
+    │   └── app.ts      <-- Main TypeScript file
+    └── tsconfig.json   <-- TypeScript configuration file
+    ```
+
+    By applying the above template you will have a ready-to-use typescript to node project which you will can run with the following commands:
+
+    ```bash
+    # This will run (npx tsc)
+    npm run build
+    ```
+
+    and then run the compiled javascript file with:
+
+    ```bash
+    # This will run (node dist/src/app.js)
+    npm run exec 
     ```
 
 <!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->
