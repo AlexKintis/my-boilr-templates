@@ -1,0 +1,14 @@
+FROM image:tag
+
+# Do what you have to do to build the image
+# Maybe export to the path the desired command
+# For example:
+export PATH=$PATH:/the/path/to/my-command
+
+# Create a directory to mount the host's directory
+mkdir -p /pwd
+# Set the working directory to the mounted directory
+WORKDIR /pwd
+
+# And then add as an entrypoint the command that will be executed
+ENTRYPOINT [ "{{CommandName}}" ]
