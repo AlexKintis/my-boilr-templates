@@ -3,10 +3,10 @@ FROM image:tag
 # Do what you have to do to build the image
 # Maybe export to the path the desired command
 # For example:
-export PATH=$PATH:/the/path/to/my-command
+ENV PATH=$PATH:/the/path/to/my-command
 
 # Create a directory to mount the host's directory
-mkdir -p /pwd
+RUN mkdir -p /pwd
 # Set the working directory to the mounted directory
 WORKDIR /pwd
 
