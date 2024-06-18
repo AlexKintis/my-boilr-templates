@@ -1,5 +1,5 @@
 {
     "CommandName": "script",
     "DockerfileName": "Dockerfile",
-    "BaseRunCommand": "docker run --network=\\\"host\\\" --rm -v $(pwd):/pwd"
+    "BaseRunCommand": "docker run --network=\\\"host\\\" --rm -v $(pwd):/pwd:Z --user $(id -u):$(id -g)"
 }
