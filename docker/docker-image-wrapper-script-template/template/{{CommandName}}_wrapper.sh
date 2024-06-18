@@ -7,7 +7,7 @@ IMAGE_NAME="{{CommandName}}"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Command to build the docker image
-BUILD_COMMAND="docker build -t $IMAGE_NAME -f $SCRIPT_DIR/{{DockerfileName}} ."
+BUILD_COMMAND="docker buildx build --tag $IMAGE_NAME --file $SCRIPT_DIR/{{DockerfileName}} ."
 
 # Base command to run the docker container
 BASE_RUN_COMMAND="{{BaseRunCommand}} $IMAGE_NAME"
