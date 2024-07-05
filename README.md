@@ -2,6 +2,10 @@
 
 This repository contains a collection of templates designed for various projects, including Jenkins, Docker<!--, Kubernetes, and more -->. These templates are created to be used with [Boilr](https://github.com/tmrts/boilr), a project scaffolding tool that helps you rapidly create project structures.
 
+<div align="center">
+<img src="https://github.com/AlexKintis/my-boilr-templates/blob/main/Images/img.png" width="45%" alt="Main window">
+</div>
+
 # Table of Contents
 
 <!-- - [Introduction](#introduction) -->
