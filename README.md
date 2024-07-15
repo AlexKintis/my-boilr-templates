@@ -13,6 +13,7 @@ This repository contains a collection of templates designed for various projects
   - [Jenkins](#jenkins)
   - [Docker](#docker)
   - [Javascript](#javascript)
+  - [Nix](#nix)
   <!--- [Ansible](#ansible)-->
   <!--- [Kubernetes](#kubernetes)-->
   <!--- [Terraform](#terraform)-->
@@ -97,6 +98,30 @@ This repository contains a collection of templates designed for various projects
     ```bash
     # This will run (node dist/src/app.js)
     npm run exec 
+    ```
+
+## Nix
+
+- **Nix Flake Template**: A template for setting up a Nix flake project.
+
+    This template will have the following structure:
+
+    ```plaintext
+    .
+    └── flake.nix    <-- Nix flake configuration file
+    ```
+
+    By applying the above template and making the necessary modifications you will have a ready-to-use nix flake project which you will can run with the following commands:
+
+    ```bash
+    # This will run (nix run)
+    nix run (or nix run .#<attr>)
+
+    # This will run (nix build)
+    nix build
+
+    # This will run (nix develop)
+    nix develop
     ```
 
 <!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->

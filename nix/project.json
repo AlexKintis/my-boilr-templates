@@ -1,0 +1,4 @@
+{
+    "ProjectDescription": "This is a test project",
+    "NeededPackages": "rustc cargo"
+}
