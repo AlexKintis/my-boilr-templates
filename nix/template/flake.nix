@@ -22,8 +22,17 @@
         # Create a script that runs `npm deploy`
         packages.default = pkgs.writeScriptBin "run-app" ''
           #!${pkgs.runtimeShell}
-          # FIXME: Change the following line to run your app
-          # ${pkgs.cargo}/bin/cargo run
+
+          # FIXME: (THIS IS Example) change the following to meet your needs
+          : ' The following can also work
+          if [ -z "$1" ]; then
+            ${pkgs.nodejs}/bin/npm run;
+            exit 0;
+          fi
+          '
+
+          # FIXME: (THIS IS Example) change the following to meet your needs
+          ${pkgs.nodejs}/bin/npm run "$1"
         '';
 
         # Create a default app that runs the script
