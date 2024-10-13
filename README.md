@@ -14,7 +14,7 @@ This repository contains a collection of templates designed for various projects
   - [Docker](#docker)
   - [Javascript](#javascript)
   - [Nix](#nix)
-  <!--- [Ansible](#ansible)-->
+  - [Ansible](#ansible)
   <!--- [Kubernetes](#kubernetes)-->
   <!--- [Terraform](#terraform)-->
 - [Usage](#usage)
@@ -127,11 +127,26 @@ This repository contains a collection of templates designed for various projects
 <!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->
 <!--- **Docker Swarm**: Template for setting up a Docker Swarm cluster.-->
 
-<!--### Ansible-->
+### Ansible
 
-<!--- **Playbook Template**: A basic template for writing Ansible playbooks.-->
-<!--- **Role Template**: Template for creating reusable Ansible roles.-->
-<!--- **Inventory Template**: Template for managing Ansible inventory files.-->
+- **Full Ansible Project**: A full ansible project.
+- **Ansible (wiki)**: A README.md file which contains the core concepts of Ansible.
+
+    This template will have the following structure:
+
+    ```plaintext
+    .
+    ├── project.json
+    ├── README.md
+    └── template
+        ├── ansible.cfg
+        ├── inventory
+        ├── playbooks
+        ├── roles
+        └── (and more)
+    ```
+
+    By applying the above template you will have a ready-to-use README.md file which contains the core concepts of Ansible.
 
 <!--### Kubernetes-->
 
