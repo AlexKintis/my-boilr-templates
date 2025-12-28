@@ -1,0 +1,6 @@
+{
+    "ProjectName": "terraform-test-project",
+    "AWS_Region": "eu-central-1",
+    "Environment": ["test", "staging", "prod"],
+    "InstanceType": "t3.micro"
+}
