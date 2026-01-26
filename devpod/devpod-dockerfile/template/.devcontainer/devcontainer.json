@@ -1,0 +1,16 @@
+{
+  "name": "{{ ProjectName }}",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    }
+  },
+  "containerEnv": {},
+  "customizations": {},
+  "remoteUser": "root"
+}

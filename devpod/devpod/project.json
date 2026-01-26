@@ -1,0 +1,4 @@
+{
+    "ProjectName": "Devpod",
+    "BaseImage": "mcr.microsoft.com/devcontainers/base:ubuntu"
+}

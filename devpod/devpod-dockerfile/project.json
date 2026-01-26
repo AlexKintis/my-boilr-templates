@@ -1,0 +1,4 @@
+{
+    "ProjectName": "Devpod",
+    "BaseImage": "ubuntu:24.04"
+}
