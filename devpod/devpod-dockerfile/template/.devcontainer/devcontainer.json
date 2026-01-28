@@ -2,12 +2,12 @@
   "name": "{{ ProjectName }}",
   "build": {
     "dockerfile": "./Dockerfile",
-    "context": "."
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {
-      "version": "latest",
-      "ppa": "false"
+    "context": ".",
+    "options": [
+      "--ssh=default"
+    ],
+    "args": {
+      "DOTFILES_REPO": "{{ DotfilesRepository }}"
     }
   },
   "containerEnv": {},

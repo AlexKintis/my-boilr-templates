@@ -1,4 +1,5 @@
 {
     "ProjectName": "Devpod",
-    "BaseImage": "ubuntu:24.04"
+    "BaseImage": "ubuntu:24.04",
+    "DotfilesRepository": "git@github.com:username/repo.git"
 }

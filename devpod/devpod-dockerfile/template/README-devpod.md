@@ -1,5 +1,15 @@
 # Devpod
 
+## Execute the following
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+ssh-add -l
+
+devpod up .
+```
+
 To see the available containers use the following [webpage](https://containers.dev/features). This contains all the available images.
 
 ## Devcontainers + DevPod (fast guide)
