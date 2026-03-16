@@ -1,0 +1,8 @@
+plugin: community.zabbix.zabbix_inventory
+
+server_url: http://zabbix_server/api_jsonrpc.php
+login_user: <USER_NAME>
+# Even if the auth_token is defined, the following attribute should be presend even if empty
+login_password: ""
+auth_token: ""
+validate_certs: false
