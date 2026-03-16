@@ -1,0 +1,4 @@
+plugin: community.zabbix.zabbix_inventory
+
+server_url: http://zabbix_server/zabbix
+auth_token: ""

@@ -1,0 +1,23 @@
+# Find all directories that contain both a 'template' folder and a 'project.json' file
+TEMPLATES := $(shell find . -maxdepth 3 -type d -exec test -d "{}/template" -a -f "{}/project.json" \; -print)
+
+# Convert directory paths into names for the targets (e.g., ./my-template -> my-template)
+TEMPLATE_NAMES := $(notdir $(TEMPLATES))
+
+.PHONY: all help $(TEMPLATE_NAMES)
+
+## help: Show this help message
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@grep -E '^##' $(MAKEFILE_LIST) | sed -e 's/## //g' | column -t -s ':'
+
+## all: Save/Update all templates found in subdirectories
+all: $(TEMPLATE_NAMES)
+
+# Pattern rule to handle the saving logic
+$(TEMPLATE_NAMES):
+	@echo "Adding template: $(filter %/$@, $(TEMPLATES))"
+	@echo "Template name: $@"
+	@boilr template save -f "$(filter %/$@, $(TEMPLATES))" "$@"
