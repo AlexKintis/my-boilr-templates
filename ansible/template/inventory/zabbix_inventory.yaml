@@ -6,3 +6,26 @@ login_user: <USER_NAME>
 login_password: ""
 auth_token: ""
 validate_certs: false
+
+# compose:
+# │ ansible_user: "'root'"
+
+# NOTE: for newer versions of zabbix in order to bind zabbix host groups inside 
+# the ansible inventory uncommend the following lines ()
+
+# DataMapping
+# zabbix_hostname: name
+# ansible_host: ip
+
+# Turned OFF because it crasses 
+# add_zabbix_groups: false
+
+# Extend the api for hostgroup and interfaces
+# host_zapi_query:
+# │ selectHostGroups: extend
+# │ selectInterfaces: extend
+
+# Use native Ansible logic to group hosts by the Zabbix hostgroup
+# keyed_groups:
+# │ - key: zbx_hostgroups | default([]) | map(attribute='name') | list
+# │ │ separator: ''
