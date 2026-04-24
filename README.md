@@ -1,197 +1,85 @@
 <h1 align=center>My boilr templates</h1>
 
-This repository contains a collection of templates designed for various projects, including Jenkins, Docker<!--, Kubernetes, and more -->. These templates are created to be used with [Boilr](https://github.com/tmrts/boilr), a project scaffolding tool that helps you rapidly create project structures.
+<p align="center">
+  <strong>A collection of curated <a href="https://github.com/tmrts/boilr">Boilr</a> templates for rapid project scaffolding.</strong>
+</p>
 
 <div align="center">
-<img src="https://github.com/AlexKintis/my-boilr-templates/blob/2f924bbf68461aaa44ad14c727cdd90f29b91595/Images/img.png" width="45%" alt="Main window">
+  <img src="https://github.com/AlexKintis/my-boilr-templates/blob/main/Images/img.png" width="45%" alt="Main window">
 </div>
 
-# Table of Contents
+---
 
-<!-- - [Introduction](#introduction) -->
-- [Templates](#templates)
-  - [Jenkins](#jenkins)
-  - [Docker](#docker)
-  - [Javascript](#javascript)
-  - [Nix](#nix)
-  - [Ansible](#ansible)
-  <!--- [Kubernetes](#kubernetes)-->
-  <!--- [Terraform](#terraform)-->
-- [Usage](#usage)
-<!--- [Contributing](#contributing)-->
-<!--- [License](#license)-->
-<!--- [Contact](#contact)-->
+## 📖 Introduction
 
-<!--## Introduction-->
+This repository contains a comprehensive collection of high-quality templates tailored for various project needs. Each template is crafted to ensure easy customization and integration into your workflow, helping you save time and avoid common setup pitfalls. These templates are designed to be used with [Boilr](https://github.com/tmrts/boilr), making project setup faster and more efficient.
 
-<!--This repository is a comprehensive resource for high-quality templates tailored for various project needs. Each template is crafted to ensure easy customization and integration into your workflow, helping you save time and avoid common setup pitfalls. These templates are designed to be used with Boilr, making project setup faster and more efficient.-->
+## 🗂️ Templates
 
-# Templates
-
-## Jenkins
-
+### 🛠️ Jenkins
 - **Jenkins Pipeline Template**: A ready-to-use Jenkins pipeline template for CI/CD processes.
-<!--- **Multibranch Pipeline**: Template for setting up multibranch pipelines in Jenkins.-->
-<!--- **Jenkins Configuration as Code (JCasC)**: Template for managing Jenkins configuration using YAML files.-->
 
-## Docker
+### 🐳 Docker
+- **Docker Compose Template**: Template for defining and running multi-container Docker applications. Includes a base `docker-compose.yml` with service definitions.
+- **Docker Image Wrapper Script**: Script template for building and wrapping a docker image to execute it as a host-level command.
+    > NOTE: The `Dockerfile` should have an `ENTRYPOINT` and a `/pwd` mount point to work correctly with the wrapper script.
 
-- **Docker Compose (DOES not work)**: Template for defining and running multi-container Docker applications using Docker Compose.
-- **Docker Image Wrapper Script Template**: Script template which is for building and wrapping a docker image and executing it as an "host level" command.
+### 📜 Ansible
+- **Full Ansible Project**: A complete project structure including inventory, roles, playbooks, and configuration.
+- **Ansible Wiki**: A template specifically for generating a `README.md` that documents core Ansible concepts.
 
-    For example, This is the command that will be executed inside the container:
+### 📦 DevPod
+- **DevPod Project**: Basic setup for [DevPod](https://devpod.sh/), enabling consistent development environments across teams.
+- **DevPod Dockerfile**: A specialized template for using custom Dockerfiles with DevPod.
 
-    ```bash
-    docker run --network="host" --rm -v $(pwd):/pwd my-command <ARGS>
-    ```
+### 🐧 Linux
+- **Linux Project Source Script**: A helper script (`source.sh`) providing standard functions like `deploy`, `start_project`, `stop_project`, `status`, and `cleanup`.
 
-    The script will be like this (which will have the same effect as the command above):
+### ⚙️ Makefile
+- **Generic Makefile**: A powerful, modular `Makefile` with built-in colorized output, help messages, and standard targets (`setup`, `build`, `test`, `run`, `clean`).
 
-    ```bash
-    my-command-wrapper.sh <ARGS>
-    ```
+### ❄️ Nix
+- **Nix Flake Template**: A template for setting up a modern Nix flake project with standard `run`, `build`, and `develop` outputs.
 
-    > NOTE: The `Dockerfile` should have the following structure in order to work properly:
+### 🌍 Terraform
+- **AWS Infrastructure**: A starter template for AWS infrastructure including provider configuration, locals, and a sample Ubuntu instance.
 
-    ```Dockerfile
-    FROM image:tag
+### 💻 Javascript
+- **Typescript NodeJS Template**: A complete setup for Node.js projects using TypeScript, including ESLint and predefined build/execution scripts.
 
-    # Do what you have to do to build the image
-    # Maybe export to the path the desired command
-    # For example:
-    ENV PATH=$PATH:/the/path/to/my-command
+---
 
-    # Create a directory to mount the host's directory
-    RUN mkdir -p /pwd
-    # Set the working directory to the mounted directory
-    WORKDIR /pwd
+## 🚀 Usage
 
-    # And then add as an entrypoint the command that will be executed
-    ENTRYPOINT [ "my-command" ]
-    ```
+To use any of these templates with Boilr:
 
-## Javascript
-
-- **Typescript NodeJS Template**: A template for setting up a Node.js project with TypeScript.
-
-    This template will have the following structure:
-
-    ```plaintext
-    .
-    ├── .eslintrc.json  <-- ESLint configuration file
-    ├── .gitignore      <-- Git ignore file
-    ├── package.json    <-- Node.js package file
-    ├── src
-    │   └── app.ts      <-- Main TypeScript file
-    └── tsconfig.json   <-- TypeScript configuration file
-    ```
-
-    By applying the above template you will have a ready-to-use typescript to node project which you will can run with the following commands:
-
-    ```bash
-    # This will run (npx tsc)
-    npm run build
-    ```
-
-    and then run the compiled javascript file with:
-
-    ```bash
-    # This will run (node dist/src/app.js)
-    npm run exec 
-    ```
-
-## Nix
-
-- **Nix Flake Template**: A template for setting up a Nix flake project.
-
-    This template will have the following structure:
-
-    ```plaintext
-    .
-    └── flake.nix    <-- Nix flake configuration file
-    ```
-
-    By applying the above template and making the necessary modifications you will have a ready-to-use nix flake project which you will can run with the following commands:
-
-    ```bash
-    # This will run (nix run)
-    nix run (or nix run .#<attr>)
-
-    # This will run (nix build)
-    nix build
-
-    # This will run (nix develop)
-    nix develop
-    ```
-
-<!--- **Dockerfile Template**: A basic Dockerfile template for building Docker images.-->
-<!--- **Docker Swarm**: Template for setting up a Docker Swarm cluster.-->
-
-### Ansible
-
-- **Full Ansible Project**: A full ansible project.
-- **Ansible (wiki)**: A README.md file which contains the core concepts of Ansible.
-
-    This template will have the following structure:
-
-    ```plaintext
-    .
-    ├── project.json
-    ├── README.md
-    └── template
-        ├── ansible.cfg
-        ├── inventory
-        ├── playbooks
-        ├── roles
-        └── (and more)
-    ```
-
-    By applying the above template you will have a ready-to-use README.md file which contains the core concepts of Ansible.
-
-<!--### Kubernetes-->
-
-<!--- **Kubernetes Deployment**: A template for deploying applications on Kubernetes.-->
-<!--- **Helm Chart**: Template for creating Helm charts to manage Kubernetes applications.-->
-<!--- **Kustomize**: Template for customizing Kubernetes configurations using Kustomize.-->
-
-<!--### Terraform-->
-
-<!--- **AWS Infrastructure**: A Terraform template for setting up AWS infrastructure.-->
-<!--- **Azure Infrastructure**: Template for provisioning Azure resources using Terraform.-->
-<!--- **GCP Infrastructure**: Template for managing Google Cloud Platform resources with Terraform.-->
-
-# Usage
-
-To use any of the templates in this repository with Boilr:
-
-1. **Install Boilr** (if not already installed):
-
+1. **Install Boilr**:
    ```bash
-    go install github.com/tmrts/boilr@latest
+   go install github.com/tmrts/boilr@latest
    ```
 
 2. **Clone the repository**:
-
    ```bash
    git clone https://github.com/AlexKintis/my-boilr-templates.git
    ```
 
 3. **Navigate to the template directory**:
-
    ```bash
-   cd ./{template-category}
+   cd ./my-boilr-templates/{category}/{template-name}
    ```
+   *(Note: For top-level templates like `makefile` or `nix`, just navigate to that directory.)*
 
 4. **Add the template to Boilr**:
-
    ```bash
-   boilr template save {template-path} {template-name}
+   boilr template save . {template-name}
    ```
 
 5. **Use the template**:
-
    ```bash
    boilr template use {template-name} {target-directory}
    ```
 
-6. **Customize the generated project** according to your needs.
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
