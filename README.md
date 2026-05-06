@@ -26,7 +26,7 @@ This repository contains a comprehensive collection of high-quality templates ta
 
 ### 📜 Ansible
 - **Full Ansible Project**: A complete project structure including inventory, roles, playbooks, and configuration.
-- **Ansible Wiki**: A template specifically for generating a `README.md` that documents core Ansible concepts.
+- **Ansible Molecule Testing**: A standardized boilerplate for adding Molecule tests to Ansible roles.
 
 ### 📦 DevPod
 - **DevPod Project**: Basic setup for [DevPod](https://devpod.sh/), enabling consistent development environments across teams.
