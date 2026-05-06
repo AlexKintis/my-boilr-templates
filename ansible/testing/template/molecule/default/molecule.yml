@@ -14,5 +14,7 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+  env:
+    ANSIBLE_STDOUT_CALLBACK: ansible.builtin.debug
 verifier:
   name: ansible
