@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ ServiceName }}-deployment
+  namespace: {{ NamespaceName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ ServiceName }}
+  template:
+    metadata:
+      labels:
+        app: {{ ServiceName }}
+    spec:
+      containers:
+        - name: {{ ServiceName }}
+          image: {{ ImageName }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: {{ ContainerPort }}
+              name: http
+          {{ if MountPath }}
+          volumeMounts:
+            - name: {{ ServiceName }}-data
+              mountPath: {{ MountPath }}
+          {{ end }}
+      {{ if HostPath }}
+      volumes:
+        - name: {{ ServiceName }}-data
+          hostPath:
+            path: {{ HostPath }}
+            type: DirectoryOrCreate
+      {{ end }}

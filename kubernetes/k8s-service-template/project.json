@@ -1,0 +1,10 @@
+{
+    "ServiceName": "service-name-placeholder",
+    "NamespaceName": "namespace-name-placeholder",
+    "ImageName": "nginx:latest",
+    "ContainerPort": 80,
+    "ServicePort": 80,
+    "DomainName": "service.example.com",
+    "HostPath": "/mnt/main/services/service-name-placeholder/config",
+    "MountPath": "/usr/share/nginx/html"
+}

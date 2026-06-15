@@ -44,6 +44,9 @@ This repository contains a comprehensive collection of high-quality templates ta
 ### 🌍 Terraform
 - **AWS Infrastructure**: A starter template for AWS infrastructure including provider configuration, locals, and a sample Ubuntu instance.
 
+### ☸️ Kubernetes
+- **Kubernetes Service**: A standardized template for a Kubernetes service deployment including Namespace, Deployment, Service, and Ingress resources.
+
 ### 💻 Javascript
 - **Typescript NodeJS Template**: A complete setup for Node.js projects using TypeScript, including ESLint and predefined build/execution scripts.
 
