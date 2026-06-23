@@ -37,6 +37,7 @@ This repository contains a comprehensive collection of high-quality templates ta
 
 ### ⚙️ Makefile
 - **Generic Makefile**: A powerful, modular `Makefile` with built-in colorized output, help messages, and standard targets (`setup`, `build`, `test`, `run`, `clean`).
+- **K3d Testing Makefile**: A specialized template for local Kubernetes (k3d) testing environments, featuring automated cluster bootstrapping, secret mapping, Helm deployment of Open WebUI, and database configuration for custom monitoring tools.
 
 ### ❄️ Nix
 - **Nix Flake Template**: A template for setting up a modern Nix flake project with standard `run`, `build`, and `develop` outputs.

@@ -1,0 +1,7 @@
+{
+    "ClusterName": "k3d-test-cluster",
+    "KubeconfigPath": "$(HOME)/.config/kube/k3d-test-cluster.yaml",
+    "Namespace": "default",
+    "RegistryName": "registry.localhost",
+    "RegistryPort": "5001"
+}
