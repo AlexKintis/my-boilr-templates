@@ -17,7 +17,7 @@ ERR   := printf "\033[31m【ERR】\033[0m %s\n"
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-.PHONY: help cluster-up cluster-down deploy status test logs all
+.PHONY: help cluster-up cluster-down kubectl-update-config deploy status test logs all
 
 ## help: Show this help menu
 help:
@@ -42,8 +42,8 @@ cluster-up:
 		--kubeconfig-switch-context=false \
 		--wait || true
 	
-	$(INFO) "Updating local kubeconfig..."
-	k3d kubeconfig get $(CLUSTER_NAME) > $(KUBECONFIG)
+	## Update kubeconfig
+	@$(MAKE) kubectl-update-config
 	
 	$(INFO) "Waiting for Kubernetes API server to become responsive..."
 	@until kubectl cluster-info > /dev/null 2>&1; do sleep 2; done
@@ -61,6 +61,11 @@ cluster-down:
 	
 	$(INFO) "Removing local kubeconfig: $(KUBECONFIG)..."
 	rm -f $(KUBECONFIG)
+
+## kubectl-update-config: update kubeconfig for kubectl
+kubectl-update-config:
+	$(INFO) "Updating local kubeconfig..."
+	k3d kubeconfig get $(CLUSTER_NAME) > $(KUBECONFIG)
 
 ## deploy: Deploy application manifests or Helm charts into the cluster
 deploy:
