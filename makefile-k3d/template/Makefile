@@ -9,9 +9,9 @@ REGISTRY_NAME  := {{ RegistryName }}
 REGISTRY_PORT  := {{ RegistryPort }}
 
 # --- 2. Display Settings ---
-INFO  := @printf "\033[36m【INFO】\033[0m %s\n"
-WARN  := @printf "\033[33m【WARN】\033[0m %s\n"
-ERR   := @printf "\033[31m【ERR】\033[0m %s\n"
+INFO  := printf "\033[36m【INFO】\033[0m %s\n"
+WARN  := printf "\033[33m【WARN】\033[0m %s\n"
+ERR   := printf "\033[31m【ERR】\033[0m %s\n"
 
 # Standard Makefile flags
 MAKEFLAGS += --warn-undefined-variables
